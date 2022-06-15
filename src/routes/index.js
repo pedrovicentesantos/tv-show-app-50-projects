@@ -35,4 +35,32 @@ router.get('/popular', async (_, res) => {
   }
 });
 
+router.get('/search', async (req, res) => {
+  try {
+    const { query } = req.query;
+
+    const response = await axios.get(
+      `${API_BASE_URL}/search/tv?query=${query}`,
+      {
+        headers: {
+          Authorization: `Bearer ${API_TOKEN}`
+        }
+      }
+    );
+
+    const data = response.data;
+    const tvShows = data.results.map(formatTVShow);
+
+    res.status(200).json({ data: tvShows });
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      return res.status(error.response.status).json({
+        message: error.response.data.status_message
+      });
+    }
+
+    res.status(500).json({ message: error.response.data.status_message });
+  }
+});
+
 module.exports = router;
