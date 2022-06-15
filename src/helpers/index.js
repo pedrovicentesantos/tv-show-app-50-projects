@@ -1,4 +1,4 @@
-const IMAGE_BASE_URL = process.env.IMAGE_BASE_URL;
+const BASE_IMAGE_URL = process.env.BASE_IMAGE_URL;
 
 const formatTVShow = tvShow => {
   return {
@@ -10,6 +10,6 @@ const formatTVShow = tvShow => {
   };
 };
 
-const parsePoster = poster => (poster ? `${IMAGE_BASE_URL}${poster}` : '');
+const parsePoster = poster => (poster ? `${BASE_IMAGE_URL}${poster}` : '');
 
 module.exports = { formatTVShow };
