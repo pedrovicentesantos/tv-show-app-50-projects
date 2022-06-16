@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const apiCache = require('apicache');
@@ -11,6 +12,8 @@ const cache = apiCache.middleware;
 const app = express();
 
 app.use(cors());
+
+app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.use('/api/v1', cache('5 minutes'), require('./routes'));
 
