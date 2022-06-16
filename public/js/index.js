@@ -1,6 +1,9 @@
 const result = document.querySelector('section#result');
 const form = document.querySelector('form');
 const loader = document.querySelector('.loader');
+const scrollToTopBtn = document.querySelector('button.scroll-top');
+const rootElement = document.documentElement;
+const footer = document.querySelector('footer');
 
 const getTVShows = async (query = null) => {
   const url = query ? `/api/v1/search?query=${query}` : '/api/v1/popular';
@@ -116,6 +119,7 @@ const createTvShowCard = tvShow => {
   cardDiv.appendChild(moreBtn);
   cardDiv.appendChild(imagePoster);
   cardDiv.appendChild(wrapperDiv);
+
   return cardDiv;
 };
 
@@ -150,3 +154,25 @@ form.addEventListener('submit', e => {
       result.innerHTML = `<p>${error.message}</p>`;
     });
 });
+
+const scrollToTop = () => {
+  rootElement.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+
+scrollToTopBtn.addEventListener('click', scrollToTop);
+
+const observerCallback = entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback);
+observer.observe(footer);
