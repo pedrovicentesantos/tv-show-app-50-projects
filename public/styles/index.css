@@ -95,6 +95,12 @@ section#result {
   border-radius: 3px;
 }
 
+@media only screen and (height: 768px) and (width: 1366px) {
+  .card {
+    grid-template-rows: 75% auto;
+  }
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -115,6 +121,12 @@ img {
 @media only screen and (min-width: 900px) {
   .placeholder {
     min-height: 400px;
+  }
+}
+
+@media only screen and (height: 768px) and (width: 1366px) {
+  .placeholder {
+    min-height: 320px;
   }
 }
 
@@ -260,6 +272,13 @@ button i {
   .scroll-top {
     width: 60px;
     height: 60px;
+  }
+}
+
+@media only screen and (height: 768px) and (width: 1366px) {
+  .scroll-top {
+    width: 50px;
+    height: 50px;
   }
 }
 
