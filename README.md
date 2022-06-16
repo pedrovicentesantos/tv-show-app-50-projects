@@ -6,6 +6,10 @@ Como a API do The Movie DB necessita de uma chave de API, foi desenvolvido um se
 
 É uma adaptação do projeto Movie App do site [50 Projects 50 Days](https://50projects50days.com).
 
+O deploy foi feito no Heroku e pode ser acessado em:
+
+[https://tv-show-app-50-projects.herokuapp.com](https://tv-show-app-50-projects.herokuapp.com)
+
 ## Rodando a aplicação
 
 Basta instalar as dependências, adicionar as variáveis apropriadas no arquivo `.env` e executar o comando `yarn dev` para rodar a aplicação. Feito isso a aplicação estará disponível em [http://localhost:5000](http://localhost:5000).
