@@ -6,9 +6,9 @@ Como a API do The Movie DB necessita de uma chave de API, foi desenvolvido um se
 
 É uma adaptação do projeto Movie App do site [50 Projects 50 Days](https://50projects50days.com).
 
-O deploy foi feito no Heroku e pode ser acessado em:
+O deploy foi feito no [Railway](https://railway.app) e pode ser acessado em:
 
-[https://tv-show-app-50-projects.herokuapp.com](https://tv-show-app-50-projects.herokuapp.com)
+[https://tv-show-app-50-projects-production.up.railway.app](https://tv-show-app-50-projects-production.up.railway.app)
 
 ## Rodando a aplicação
 
